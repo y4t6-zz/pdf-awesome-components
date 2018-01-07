@@ -1,6 +1,9 @@
-extends templates/default/index
-include components/button/_mixin
-include components/document-item/_mixin
+extends ../templates/default/index
+include ../components/button/_mixin
+include ../components/document-item/_mixin
+
+block vars
+  - var title='Test page - PDF AWESOME COMPONENTS'
 
 block head_end
   link(rel="stylesheet" href="/css/style.css") 
@@ -20,7 +23,6 @@ block content
         +button('Active', 'c-button--default c-button--active')
         +button('Disable', 'c-button--default c-button--disable')
         +button('Focused', 'c-button--default c-button--focus')
-    include components/document-list/index
+    include ../components/document-list/index
   
 block body_end
-  script(type="text/javascript" src="/js/script.js")

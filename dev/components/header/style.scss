@@ -1,9 +1,14 @@
 @import "../../sass/vars";
+@import "../../sass/includes/media";
 
 .c-header {
   padding-top: 40px;
+  @include ab() {
+    padding-top: 20px;
+  }
   &__columnList {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
   }
@@ -16,9 +21,19 @@
       padding-left: 208px;
       padding-right: 20px;
       text-align: center;
+      @include ab() {
+        padding-left: 0;
+        padding-right: 0;
+        order: 3;
+        padding-top: 20px;
+        width: 100%;
+      }
     }
     &:nth-child(3) {
       width: 100px; 
+      @include ab() {
+        order: 2;
+      }
     }
   }
   &__logo {
@@ -36,6 +51,12 @@
       li {
         padding-right: 60px;
         display: inline-block;
+        &:last-child {
+          padding-right: 0;
+        }
+        @include ab() {
+          padding-right: 20px;
+        }
         a {
           text-decoration: none;
           color: #8a8a8a;
@@ -60,6 +81,13 @@
     .c-header {
       &__logo {
         display: none;
+      }
+      &__column {
+        &:nth-child(2) {
+          @include ab() {
+            padding-top: 40px;
+          }
+        }
       }
     }
   }

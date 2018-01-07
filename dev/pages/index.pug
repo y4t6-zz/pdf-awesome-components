@@ -1,10 +1,13 @@
-extends templates/default/index
+extends ../templates/default/index
 
-include components/header/_mixin
-include components/hero/_mixin
-include components/footer/_mixin
-include components/ul/_mixin
-include components/document-list/_mixin
+include ../components/header/_mixin
+include ../components/hero/_mixin
+include ../components/footer/_mixin
+include ../components/ul/_mixin
+include ../components/document-list/_mixin
+
+block vars
+  - var title='Main page - PDF AWESOME COMPONENTS'
 
 block head_end
   link(rel="stylesheet" href="/css/style.css") 
@@ -17,7 +20,7 @@ block content
     .inner
       .c-block__columnList
         .c-block__column
-          img(src='/img/content/useThem.png')
+          img(src='/img/content/useThem.png', alt='Using demonstrations')
         .c-block__column
           h2.
             Use them where you want <br/>on your page
@@ -37,9 +40,8 @@ block content
                  
 
         .c-block__column
-          img(src='/img/content/theAwesomeDocs.png')
+          img(src='/img/content/theAwesomeDocs.png', alt='Document page demonstrations')
 
   +footer()
   
 block body_end
-  script(type="text/javascript" src="/js/script.js")

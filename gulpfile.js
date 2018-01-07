@@ -24,7 +24,7 @@ var paths = {
  * matching file name. index.pug - index.pug.json
  */
 gulp.task('pug', function () {
-  return gulp.src('./dev/*.pug')
+  return gulp.src('./dev/pages/*.pug')
     .pipe(data(function (file) {
     //  return require(paths.data + path.basename(file.path) + '.json');
     }))
@@ -116,19 +116,17 @@ gulp.task('component-pug', function () {
  * Watch .pug files run pug-rebuild then reload BrowserSync
  */
 gulp.task('watch', function () {
-  //gulp.watch(paths.sass + '**/*.scss', ['sass']);
   gulp.watch('./dev/**/*.pug', ['rebuild', 'component-pug']);
   gulp.watch('./dev/img/**/*', ['img']);
-  gulp.watch('./dev/**/*.scss', ['rebuild','sass']);
-  //gulp.watch('./dev/**/*.scss', ['component-sass']);
+  gulp.watch('./dev/**/*.scss', ['rebuild','sass', 'component-sass']);
 });
 
 // Build task compile sass and pug.
-gulp.task('build', ['sass', 'pug', 'img', 'component-pug']);
+gulp.task('build', ['sass', 'pug', 'img', 'component-pug', 'component-sass']);
 
 /**
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync then watch
  * files for changes
  */
-gulp.task('default', ['browser-sync', 'watch', 'component-pug', 'img']);
+gulp.task('default', ['browser-sync', 'watch', 'component-pug', 'img', 'component-sass']);

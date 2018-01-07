@@ -1,4 +1,5 @@
 include ../github-star/_mixin
+include ../button/_mixin
 
 mixin header(extra_classes)
   - var default_classes = 'c-header'
@@ -12,7 +13,7 @@ mixin header(extra_classes)
       .c-header__columnList
         .c-header__column
           a(class='c-header__logo' href='/index.html')
-            img(src='/img/design/logo-small.png')
+            img(src='/img/design/logo-small.png', alt='logo-small')
         .c-header__column
           nav
             ul
