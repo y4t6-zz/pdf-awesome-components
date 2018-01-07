@@ -5,6 +5,10 @@
   &__columnList {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    @include ab() {
+      flex-direction: column;
+    }
   }
   &__column {
     &:nth-child(1) {
@@ -13,17 +17,30 @@
       padding-right: 160px;
       display: flex;
       flex-direction: column;
+      @include ab() {
+        padding-top: 20px;
+        padding-right: 0;
+        padding-bottom: 20px;
+        align-items: center;
+      }
     }
     &:nth-child(2) {
       flex-grow: 10;
       background-size: contain;
       background-repeat: no-repeat;
       background-position: bottom right;
+      @include ab() {
+        height: 200px;
+      }
     }
   }
   &__logo {
     width: 360px;
     margin-bottom: 85px;
+    @include ab() {
+      width: 150px;
+      align-self: flex-start;
+    }
   }
   &__logoImg {
     padding-bottom: 45%;
