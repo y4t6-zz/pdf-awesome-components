@@ -1,0 +1,11 @@
+@import "../../sass/vars";
+
+.c-githubStar {
+  display: inline-block;
+  font-size: 0;
+  img {
+    width: 100px;
+    display: block;
+  }
+}
+

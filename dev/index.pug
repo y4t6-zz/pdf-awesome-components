@@ -1,0 +1,45 @@
+extends templates/default/index
+
+include components/header/_mixin
+include components/hero/_mixin
+include components/footer/_mixin
+include components/ul/_mixin
+include components/document-list/_mixin
+
+block head_end
+  link(rel="stylesheet" href="/css/style.css") 
+
+block content
+  +header('c-header--index')
+  +hero()
+
+  .c-block.c-block--mainPage.c-block--useThem
+    .inner
+      .c-block__columnList
+        .c-block__column
+          img(src='/img/content/useThem.png')
+        .c-block__column
+          h2.
+            Use them where you want <br/>on your page
+  .c-block.c-block--mainPage.c-block--awesomeDoc
+    .inner
+      .c-block__header
+        h2.
+          The awesome documentation
+      .c-block__columnList
+        .c-block__column
+          .c-block__awesomeDocNavWrap
+            +button('SEE COMPONENTS', 'c-button--hero c-button--mainColor')
+            p.
+              Or choose them from list:
+            nav
+              +ul()
+                 
+
+        .c-block__column
+          img(src='/img/content/theAwesomeDocs.png')
+
+  +footer()
+  
+block body_end
+  script(type="text/javascript" src="/js/script.js")

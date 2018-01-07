@@ -1,0 +1,11 @@
+mixin githubStar(extra_classes)
+  - var default_classes = 'c-githubStar'
+  if extra_classes
+      - var classes = default_classes + ' ' + extra_classes
+  else
+      - var classes = default_classes
+
+  a(class=classes, href='www.github.com')
+    img(src='/img/design/github-star.png')
+
+             

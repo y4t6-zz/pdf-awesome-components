@@ -1,0 +1,25 @@
+include ../github-star/_mixin
+
+mixin header(extra_classes)
+  - var default_classes = 'c-header'
+  if extra_classes
+      - var classes = default_classes + ' ' + extra_classes
+  else
+      - var classes = default_classes
+
+  div(class=classes)
+    .inner
+      .c-header__columnList
+        .c-header__column
+          a(class='c-header__logo' href='/index.html')
+            img(src='/img/design/logo-small.png')
+        .c-header__column
+          nav
+            ul
+              li
+                a(href='docs.html') DOCS 
+              li
+                a(href='components.html') COMPONENTS 
+        .c-header__column
+          +githubStar()
+             

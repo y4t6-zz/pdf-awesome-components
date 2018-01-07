@@ -1,0 +1,20 @@
+mixin componentPreview(id, name, link, image)
+    if name 
+        - var name = name 
+    else
+        - var name = 'Default name' 
+    if link 
+        - var link = link 
+    else
+        - var link = '/components.html'
+    if image 
+        - var image = image 
+    else
+        - var image = 'http://via.placeholder.com/46x62'
+
+    .c-componentPreview(id=id)
+      .c-componentPreview__linkWrap
+        a(href=link) !{name} 
+      .c-componentPreview__imageWrap
+        img(src=image)
+             

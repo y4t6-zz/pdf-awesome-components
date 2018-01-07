@@ -1,0 +1,40 @@
+include ../go-top-button/_mixin
+include ../github-star/_mixin
+
+mixin footer(extra_classes)
+  - var default_classes = 'c-footer'
+  if extra_classes
+      - var classes = default_classes + ' ' + extra_classes
+  else
+      - var classes = default_classes
+
+  div(class=classes)
+    .c-footer__top 
+      .inner
+        +goTopButton()
+        .c-footer__topHeader
+          .c-footer__logo
+            img(src='/img/design/logo-white.png')
+          .c-footer__githubStar
+            +githubStar()
+        .c-footer__nav
+          nav
+            ul
+              li
+                a(href='/index.html') Main page 
+              li
+                a(href='/docs.html') Docs 
+              li
+                a(href='/components.html') Components 
+
+
+    .c-footer__bottom 
+      .inner    
+        .c-footer__bottomColumnList
+          .c-footer__bottomColumn
+            p= '2017 © PDF AWESOME COMPONENTS' 
+          .c-footer__bottomColumn
+            p.
+              Create with love by #[a(href='https://www.work.ua/resumes/3041049/', target='_blank' ) me] 
+
+             

@@ -1,0 +1,61 @@
+.c-comp {
+  &__borderedItem {
+    border: 1px solid $border-color;
+    padding: 20px;
+    margin-top: -1px;
+    &:nth-child(2) {
+      display: flex;
+      justify-content: center;
+    }
+    &:nth-child(3) {
+      padding: 0;
+    }
+  } 
+  &__codeItemList {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__codeItem {
+    width: 50%;
+    position: relative;
+    padding: 20px 30px;
+    padding-top: 40px;
+    &:nth-child(1) {
+      border-right: 1px solid $border-color;
+    }
+  }
+  &__codeLang {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    font-size: 12px;
+  }
+  &__code {
+    overflow-x: auto;
+    padding-bottom: 20px;
+    div {
+      white-space: nowrap; 
+    }
+  }
+  &__codeLine {
+    $step: 20px;
+    &--p1 {
+      padding-left: $step;
+    }
+    &--p2 {
+      padding-left: $step*2;
+    }
+    &--p3 {
+      padding-left: $step*3;
+    }
+    &--p4 {
+      padding-left: $step*4;
+    }
+    &--p5 {
+      padding-left: $step*5;
+    } 
+    &--p6 {
+      padding-left: $step*6;
+    }
+  }
+}

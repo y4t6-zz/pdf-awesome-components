@@ -1,0 +1,28 @@
+@import "vars";
+@import "includes/extend";
+@import "includes/base";
+
+@import "../components/button/style";
+@import "../components/button-list/style";
+@import "../components/document-list/style";
+@import "../components/document-item/style";
+@import "../components/main/style";
+@import "../components/hero/style";
+@import "../components/header/style";
+@import "../components/page-header/style";
+@import "../components/footer/style";
+@import "../components/go-top-button/style";
+@import "../components/github-star/style";
+@import "../components/block/style";
+@import "../components/ul/style";
+@import "../components/component-preview/style";
+@import "../components/comp/style";
+
+header {
+  h1 {
+    font-weight: 300;
+    text-align: center;
+    font-size: 60px;
+    margin-top: 180px;
+  }
+}

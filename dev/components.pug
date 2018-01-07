@@ -1,0 +1,37 @@
+extends templates/default/index
+
+include components/header/_mixin
+include components/footer/_mixin
+include components/ul/_mixin
+include components/component-preview/_mixin
+
+block head_end
+  link(rel="stylesheet" href="/css/style.css") 
+
+block content
+  +header()
+  .c-pageHeader 
+    .inner
+      nav 
+        ul
+          li
+            a(href='/index.html') MAIN PAGE
+          li
+            a(href='/docs.html') DOCS 
+      .c-pageHeader__h1Wrap
+        h1.
+          COMPONENTS
+  .c-block.c-block--leftSidebar.c-block--componentsList
+    .inner
+      .c-block__columnList
+        .c-block__column
+          +ul()
+        .c-block__column
+          +componentPreview('component_button', 'c-button', '/component-button.html', '/img/content/component-button.png')
+            h3. 
+              test
+          +componentPreview('component_document_list', 'c-documentList', '/component-documentList.html', '/img/content/component-documentList.png')
+  +footer()
+  
+block body_end
+  script(type="text/javascript" src="/js/script.js")

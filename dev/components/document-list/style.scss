@@ -1,0 +1,49 @@
+@import "../../sass/vars";
+
+.c-documentList {
+  h2 {
+    margin: 0;
+    font-size: 15px;
+  }
+  h3 {
+    margin: 0;
+    color: #b4b4b4;
+    font-size: 13px;
+    font-weight: normal;
+  }
+  .c-button {
+    width: 100%;
+  }
+  &__item {
+    margin-top: -1px;
+    border: 1px solid $border-color; 
+    padding: 0 19px 0 9px;
+    max-width: 520px;
+    padding-bottom: 9px;
+  }
+  &__columnList {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__column {
+    padding-top: 9px;
+    &:nth-child(1) {
+     // width: 46px;
+      padding-right: 10px;
+    }
+    &:nth-child(2) {
+      flex-grow: 10;
+      padding-right: 10px;
+    }
+    &:nth-child(3) {
+      flex-grow: 1;
+    }
+  }
+  &__image {
+    width: 46px;
+    height: 62px;
+    border: 1px solid $border-color;
+  }
+}

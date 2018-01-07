@@ -1,0 +1,13 @@
+.c-buttonList {
+  display: flex;
+  flex-wrap: wrap;
+  .c-button {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  &__column {
+    padding-left: 14px;
+    padding-right: 14px;
+    flex-grow: 1;
+  }
+}

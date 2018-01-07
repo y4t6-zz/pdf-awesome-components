@@ -1,0 +1,8 @@
+mixin goTopButton(extra_classes)
+    - var default_classes = 'c-goTopButton'
+    if extra_classes
+        - var classes = default_classes + ' ' + extra_classes
+    else
+        - var classes = default_classes
+
+    a(class=classes, href='#')

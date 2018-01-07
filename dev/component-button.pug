@@ -1,0 +1,73 @@
+extends templates/default/index
+
+include components/header/_mixin
+include components/button/_mixin
+include components/footer/_mixin
+include components/ul/_mixin
+include components/component-preview/_mixin
+
+block head_end
+  link(rel="stylesheet" href="/css/style.css") 
+
+block content
+  +header()
+  .c-pageHeader 
+    .inner
+      nav 
+        ul
+          li
+            a(href='/index.html') MAIN PAGE
+          li
+            a(href='/docs.html') DOCS 
+          li
+            a(href='/components.html') COMPONENTS 
+
+      .c-pageHeader__h1Wrap
+        h1.
+          c-button 
+  .c-block.c-block--compList
+    .inner
+      .c-block__wideColumn
+        .c-comp
+          .c-comp__borderedItem 
+            h3.c-comp__header.
+              c-button c-button--default
+          .c-comp__borderedItem 
+            +button('Normal', 'c-button--default')
+          .c-comp__borderedItem 
+            .c-comp__codeItemList
+              .c-comp__codeItem
+                .c-comp__codeLang PUG 
+                .c-comp__code
+                  div= '+button("Normal", "c-button c-button--default")' 
+              .c-comp__codeItem
+                .c-comp__codeLang HTML 
+                .c-comp__code
+                  div= '<button class="c-button c-button-default">' 
+                  .c-comp__codeLine.c-comp__codeLine--p1= 'Normal'
+                  div= '</button>'
+        .c-comp
+          .c-comp__borderedItem 
+            h3.c-comp__header.
+              c-button c-button--accent
+          .c-comp__borderedItem 
+            +button('Normal', 'c-button--accent')
+          .c-comp__borderedItem 
+            .c-comp__codeItemList
+              .c-comp__codeItem
+                .c-comp__codeLang PUG 
+                .c-comp__code
+                  div= '+button("Normal", "c-button c-button--accent")' 
+              .c-comp__codeItem
+                .c-comp__codeLang HTML 
+                .c-comp__code
+                  div= '<button class="c-button c-button-accent">' 
+                  .c-comp__codeLine.c-comp__codeLine--p1= 'Normal'
+                  div= '</button>'
+
+
+             
+  +footer()
+  
+block body_end
+  script(type="text/javascript" src="/js/script.js")

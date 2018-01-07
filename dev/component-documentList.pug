@@ -1,0 +1,116 @@
+extends templates/default/index
+
+include components/header/_mixin
+include components/button/_mixin
+include components/footer/_mixin
+include components/ul/_mixin
+include components/component-preview/_mixin
+
+block head_end
+  link(rel="stylesheet" href="/css/style.css") 
+
+block content
+  +header()
+  .c-pageHeader 
+    .inner
+      nav 
+        ul
+          li
+            a(href='/index.html') MAIN PAGE
+          li
+            a(href='/docs.html') DOCS 
+          li
+            a(href='/components.html') COMPONENTS 
+
+      .c-pageHeader__h1Wrap
+        h1.
+          c-documentList 
+  .c-block.c-block--compList
+    .inner
+      .c-block__wideColumn
+        .c-comp
+          .c-comp__borderedItem 
+            h3.c-comp__header.
+             c-documentList 
+          .c-comp__borderedItem 
+            include components/document-list/index
+          .c-comp__borderedItem 
+            .c-comp__codeItemList
+              .c-comp__codeItem
+                .c-comp__codeLang PUG 
+                .c-comp__code
+                  div= 'include components/document-list/index' 
+                  div= 'include ../button/_mixin' 
+                  div= "- var doc1 = {'name':'big_name_of_document','date':'08/08/2014','image':'http://via.placeholder.com/46x62'}"
+                  div= "- var doc2 = {'name':'name_of_document','date':'08/08/2014','image':'http://via.placeholder.com/46x62'}"
+                  div= "- var doc3 = {'name':'name_of_document','date':'08/08/2014','image':'http://via.placeholder.com/46x62'}"
+                  div= "- var documents = [doc1, doc2, doc3]"
+                  div= '.c-documentList'
+                  .c-comp__codeLine.c-comp__codeLine--p1= '.c-documentList__list'
+                  .c-comp__codeLine.c-comp__codeLine--p2= 'each val, index in documents'
+                  .c-comp__codeLine.c-comp__codeLine--p3= '.c-documentList__item'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '.c-documentList__columnList'
+                  .c-comp__codeLine.c-comp__codeLine--p5= '.c-documentList__column'
+                  .c-comp__codeLine.c-comp__codeLine--p6= '.c-documentList__image(style="background-image: url(\'" + val.image + "\')")'
+                  .c-comp__codeLine.c-comp__codeLine--p5= '.c-documentList__column'
+                  .c-comp__codeLine.c-comp__codeLine--p6= 'h2= val.name'
+                  .c-comp__codeLine.c-comp__codeLine--p6= 'h3= val.date'
+                  .c-comp__codeLine.c-comp__codeLine--p5= '.c-documentList__column'
+                  .c-comp__codeLine.c-comp__codeLine--p6= "+button('View document', 'c-button--accent')"
+
+              .c-comp__codeItem
+                .c-comp__codeLang HTML 
+                .c-comp__code
+                  div= '<div class="c-documentList">' 
+                  .c-comp__codeLine.c-comp__codeLine--p1= '<div class="c-documentList__list">'
+                  .c-comp__codeLine.c-comp__codeLine--p2= '<div class="c-documentList__item">'
+                  .c-comp__codeLine.c-comp__codeLine--p3= '<div class="c-documentList__columnList">'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '<div class="c-documentList__column">'
+                  .c-comp__codeLine.c-comp__codeLine--p5= '<div class="c-documentList__image" style="background-image: url(http://via.placeholder.com/46x62);"></div>'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '</div>'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '<div class="c-documentList__column">'
+                  .c-comp__codeLine.c-comp__codeLine--p5= '<h2>name_of_document</h2>'
+                  .c-comp__codeLine.c-comp__codeLine--p5= '<h3>08/08/2014</h3>'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '</div>'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '<div class="c-documentList__column">'
+                  .c-comp__codeLine.c-comp__codeLine--p5= '<button class="c-button c-button--accent">View document</button>'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '</div>'
+                  .c-comp__codeLine.c-comp__codeLine--p3= '</div>'
+                  .c-comp__codeLine.c-comp__codeLine--p2= '</div>'
+                  .c-comp__codeLine.c-comp__codeLine--p2= '<div class="c-documentList__item">'
+                  .c-comp__codeLine.c-comp__codeLine--p3= '<div class="c-documentList__columnList">'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '<div class="c-documentList__column">'
+                  .c-comp__codeLine.c-comp__codeLine--p5= '<div class="c-documentList__image" style="background-image: url(http://via.placeholder.com/46x62);"></div>'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '</div>'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '<div class="c-documentList__column">'
+                  .c-comp__codeLine.c-comp__codeLine--p5= '<h2>name_of_document</h2>'
+                  .c-comp__codeLine.c-comp__codeLine--p5= '<h3>08/08/2014</h3>'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '</div>'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '<div class="c-documentList__column">'
+                  .c-comp__codeLine.c-comp__codeLine--p5= '<button class="c-button c-button--accent">View document</button>'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '</div>'
+                  .c-comp__codeLine.c-comp__codeLine--p3= '</div>'
+                  .c-comp__codeLine.c-comp__codeLine--p2= '</div>'
+                  .c-comp__codeLine.c-comp__codeLine--p2= '<div class="c-documentList__item">'
+                  .c-comp__codeLine.c-comp__codeLine--p3= '<div class="c-documentList__columnList">'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '<div class="c-documentList__column">'
+                  .c-comp__codeLine.c-comp__codeLine--p5= '<div class="c-documentList__image" style="background-image: url(http://via.placeholder.com/46x62);"></div>'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '</div>'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '<div class="c-documentList__column">'
+                  .c-comp__codeLine.c-comp__codeLine--p5= '<h2>name_of_document</h2>'
+                  .c-comp__codeLine.c-comp__codeLine--p5= '<h3>08/08/2014</h3>'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '</div>'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '<div class="c-documentList__column">'
+                  .c-comp__codeLine.c-comp__codeLine--p5= '<button class="c-button c-button--accent">View document</button>'
+                  .c-comp__codeLine.c-comp__codeLine--p4= '</div>'
+                  .c-comp__codeLine.c-comp__codeLine--p3= '</div>'
+                  .c-comp__codeLine.c-comp__codeLine--p2= '</div>'
+                  .c-comp__codeLine.c-comp__codeLine--p1= '</div>'
+                  div= '</div>'
+
+
+             
+  +footer()
+  
+block body_end
+  script(type="text/javascript" src="/js/script.js")

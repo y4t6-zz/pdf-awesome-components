@@ -1,0 +1,102 @@
+@import "../../sass/vars";
+
+.c-block {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  img {
+    max-width: 100%;
+  }
+  h2, h3 {
+      margin: 0;
+  }
+  &__columnList {
+    display: flex;
+    align-items: center;
+  }
+  &__column {
+    width: 50%;
+  }
+  &__header {
+    text-align: center;
+    padding-bottom: 90px;
+    h2 {
+      margin: 0;
+    }
+  }
+  &--mainPage {
+    img {
+      box-shadow: 0 0 23px 0 rgba(0, 0, 0, 0.41);
+      border-radius: 6px;
+    }
+    &.c-block {
+      
+    }
+  }
+  &--useThem {
+    padding-top: 120px;
+    padding-bottom: 120px;
+    .c-block {
+      &__column {
+        &:nth-child(2) {
+          padding-left: 20px;
+          display: flex;
+          justify-content: center;
+        }
+      }      
+    }
+  }
+  &--awesomeDoc {
+    padding-bottom: 125px;
+    .c-block {
+      &__columnList {
+        align-items: flex-start;
+        flex-direction: row;
+      }
+      &__column {
+        &:nth-child(1) {
+          padding-right: 20px;
+          display: flex;
+          justify-content: center;
+          align-items: flex-start;
+        }
+      }      
+      &__awesomeDocNavWrap {
+
+      }
+    }
+  }
+  &--leftSidebar {
+    .c-block {
+      &__columnList {
+        align-items: flex-start;
+      }
+      &__column {
+        &:nth-child(1) {
+          width: 300px; 
+        }
+        &:nth-child(2) {
+          width: auto; 
+          flex-grow: 10;
+        }
+      }      
+    }
+  }
+  &--componentsList {
+    padding-bottom: 140px;
+    .c-componentPreview {
+      margin-bottom: 35px;
+    }
+  }
+  &--compList {
+    padding-bottom: 140px;
+    .c-comp {
+      margin-bottom: 40px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &--docs {
+    padding-bottom: 100px;
+  }
+}

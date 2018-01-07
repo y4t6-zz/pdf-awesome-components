@@ -1,0 +1,15 @@
+include ../button/_mixin
+
+mixin documentList(documents)
+  .c-documentList
+    .c-documentList__list
+      each val, index in documents 
+        .c-documentList__item
+          .c-documentList__columnList
+            .c-documentList__column
+              .c-documentList__image(style="background-image: url('" + val.image + "')")
+            .c-documentList__column
+              h2= val.name 
+              h3= val.date
+            .c-documentList__column
+              +button('View document', 'c-button--accent')

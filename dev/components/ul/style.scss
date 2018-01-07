@@ -1,0 +1,14 @@
+@import "../../sass/vars";
+
+.c-ul {
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+    margin-bottom: 5px;
+    a {
+      color: $link-color;
+    }
+  }  
+}
+

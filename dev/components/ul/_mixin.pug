@@ -1,0 +1,14 @@
+mixin ul(extra_classes)
+  - var default_classes = 'c-ul'
+  if extra_classes
+      - var classes = default_classes + ' ' + extra_classes
+  else
+      - var classes = default_classes
+
+  ul(class=classes)
+    li
+      a(href='/components.html#component_button') c-button 
+    li
+      a(href='/components.html#component_document_list') c-documentList
+  
+             

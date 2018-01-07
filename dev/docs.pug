@@ -1,0 +1,36 @@
+extends templates/default/index
+
+include components/header/_mixin
+include components/footer/_mixin
+include components/ul/_mixin
+include components/component-preview/_mixin
+
+block head_end
+  link(rel="stylesheet" href="/css/style.css") 
+
+block content
+  +header()
+  .c-pageHeader 
+    .inner
+      nav 
+        ul
+          li
+            a(href='/index.html') MAIN PAGE
+      .c-pageHeader__h1Wrap
+        h1.
+          DOCS 
+  .c-block.c-block--docs
+    .inner
+      .c-block__wideColumn
+        .c-doc
+          .c-doc__itemList
+            .c-doc__item    
+              h2= 'How to install'
+              p= 'git clone some/repo'
+              p= 'npm i'
+              p= 'gulp'
+                
+  +footer()
+  
+block body_end
+  script(type="text/javascript" src="/js/script.js")

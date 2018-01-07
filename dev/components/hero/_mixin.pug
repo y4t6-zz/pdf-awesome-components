@@ -1,0 +1,15 @@
+include ../button/_mixin
+
+mixin hero()
+  .c-hero
+    .inner
+      .c-hero__columnList
+        .c-hero__column
+          .c-hero__logo
+            .c-hero__logoImg(style="background-image: url('/img/design/logo-white.png')")
+          +button('DOWNLOAD SOURCE', 'c-button--hero')
+          a(class='c-hero__githubLink' href='github.com') SEE ON GITHUB
+        .c-hero__column(style="background-image: url('/img/content/ipad-hero.png')")
+            
+
+             

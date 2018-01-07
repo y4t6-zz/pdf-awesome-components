@@ -1,0 +1,26 @@
+include ../button/_mixin
+
+mixin documentItem(name, date, image)
+    if name 
+        - var name = name 
+    else
+        - var name = 'Default name' 
+    if date 
+        - var date = date 
+    else
+        - var date = '00/00/0000'
+    if image 
+        - var image = image 
+    else
+        - var image = 'http://via.placeholder.com/46x62'
+
+    .c-documentItem
+      .c-documentItem__columnList
+        .c-documentItem__column
+          .c-documentItem__image(style="background-image: url('"+image+"')")
+        .c-documentItem__column
+          h2 !{name} 
+          h3 !{date}
+        .c-documentItem__column
+          +button('View document', 'c-button--accent')
+             

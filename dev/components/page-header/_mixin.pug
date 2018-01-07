@@ -1,0 +1,18 @@
+mixin pageHeader(extra_classes)
+  - var default_classes = 'c-pageHeader'
+  if extra_classes
+      - var classes = default_classes + ' ' + extra_classes
+  else
+      - var classes = default_classes
+
+  div(class=classes)
+    .inner
+      nav 
+        ul
+          li
+            a(href='/index.html') MAIN PAGE
+          li
+            a(href='/docs.html') DOCS 
+      .c-pageHeader__h1Wrap
+        h1.
+          COMPONENTS      
