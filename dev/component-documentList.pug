@@ -5,6 +5,7 @@ include components/button/_mixin
 include components/footer/_mixin
 include components/ul/_mixin
 include components/component-preview/_mixin
+include components/document-list/_mixin
 
 block head_end
   link(rel="stylesheet" href="/css/style.css") 
@@ -33,30 +34,21 @@ block content
             h3.c-comp__header.
              c-documentList 
           .c-comp__borderedItem 
-            include components/document-list/index
+            - var doc1 = {'name':'big_name_of_document','date':'08/08/2014','image':'http://via.placeholder.com/46x62'}
+            - var doc2 = {'name':'name_of_document','date':'08/08/2014','image':'http://via.placeholder.com/46x62'}
+            - var doc3 = {'name':'name_of_document','date':'08/08/2014','image':'http://via.placeholder.com/46x62'}
+            - var documents = [doc1, doc2, doc3]
+            +documentList(documents)
           .c-comp__borderedItem 
             .c-comp__codeItemList
               .c-comp__codeItem
                 .c-comp__codeLang PUG 
                 .c-comp__code
-                  div= 'include components/document-list/index' 
-                  div= 'include ../button/_mixin' 
                   div= "- var doc1 = {'name':'big_name_of_document','date':'08/08/2014','image':'http://via.placeholder.com/46x62'}"
                   div= "- var doc2 = {'name':'name_of_document','date':'08/08/2014','image':'http://via.placeholder.com/46x62'}"
                   div= "- var doc3 = {'name':'name_of_document','date':'08/08/2014','image':'http://via.placeholder.com/46x62'}"
                   div= "- var documents = [doc1, doc2, doc3]"
-                  div= '.c-documentList'
-                  .c-comp__codeLine.c-comp__codeLine--p1= '.c-documentList__list'
-                  .c-comp__codeLine.c-comp__codeLine--p2= 'each val, index in documents'
-                  .c-comp__codeLine.c-comp__codeLine--p3= '.c-documentList__item'
-                  .c-comp__codeLine.c-comp__codeLine--p4= '.c-documentList__columnList'
-                  .c-comp__codeLine.c-comp__codeLine--p5= '.c-documentList__column'
-                  .c-comp__codeLine.c-comp__codeLine--p6= '.c-documentList__image(style="background-image: url(\'" + val.image + "\')")'
-                  .c-comp__codeLine.c-comp__codeLine--p5= '.c-documentList__column'
-                  .c-comp__codeLine.c-comp__codeLine--p6= 'h2= val.name'
-                  .c-comp__codeLine.c-comp__codeLine--p6= 'h3= val.date'
-                  .c-comp__codeLine.c-comp__codeLine--p5= '.c-documentList__column'
-                  .c-comp__codeLine.c-comp__codeLine--p6= "+button('View document', 'c-button--accent')"
+                  div= '+documentList(documents)'
 
               .c-comp__codeItem
                 .c-comp__codeLang HTML 

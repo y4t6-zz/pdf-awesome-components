@@ -12,7 +12,10 @@
   color: #3B3B3B;
   height: 32px;
   min-width: 120px;
-  display: block;
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  width: fit-content;
   &--default {
     &.c-button {
       &--hover, &:hover {
@@ -64,6 +67,7 @@
     padding-right: 20px;
     min-width: 315px;
     height: 60px;
+    line-height: 58px;
     border-radius: 6px;
     font-size: 18px;
     letter-spacing: 2px;
