@@ -1,0 +1,12 @@
+mixin counter()
+    - var default_classes = 'c-counter'
+    if extra_classes
+        - var classes = default_classes + ' ' + extra_classes
+    else
+        - var classes = default_classes
+
+    div(class=classes) 
+      button(data-role="minus") -
+      input(type="number" name="counter" value="1" min="1")
+      button(data-role="plus") +
+        

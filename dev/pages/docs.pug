@@ -5,6 +5,7 @@ include ../components/footer/_mixin
 include ../components/ul/_mixin
 include ../components/component-preview/_mixin
 include ../components/document-list/_mixin
+include ../components/counter/_mixin
 
 block vars
   - var title='DOCS - PDF AWESOME COMPONENTS'
@@ -38,3 +39,4 @@ block content
   +footer()
   
 block body_end
+  script(src="/js/app.js")

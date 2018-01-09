@@ -7,6 +7,7 @@ var gulp = require('gulp'),
   pug = require('gulp-pug'),
   prefix = require('gulp-autoprefixer'),
   sass = require('gulp-sass'),
+  include = require('gulp-include'),
   browserSync = require('browser-sync');
 
 /*
@@ -82,6 +83,16 @@ gulp.task('img', function() {
       }));
 });
 
+gulp.task('js', function() {
+  return gulp.src('./dev/js/app.js')
+    .pipe(include())
+      .on('error', console.log)
+    .pipe(gulp.dest('./public/js/'))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
+});
+
 gulp.task('component-sass', function () {
   return gulp.src('./dev/components/' + '**/*.scss')
     .pipe(sass({
@@ -118,15 +129,16 @@ gulp.task('component-pug', function () {
 gulp.task('watch', function () {
   gulp.watch('./dev/**/*.pug', ['rebuild', 'component-pug']);
   gulp.watch('./dev/img/**/*', ['img']);
+  gulp.watch('./dev/**/*.js', ['js']);
   gulp.watch('./dev/**/*.scss', ['rebuild','sass', 'component-sass']);
 });
 
 // Build task compile sass and pug.
-gulp.task('build', ['sass', 'pug', 'img', 'component-pug', 'component-sass']);
+gulp.task('build', ['sass', 'pug', 'img', 'js', 'component-pug', 'component-sass']);
 
 /**
  * Default task, running just `gulp` will compile the sass,
  * compile the jekyll site, launch BrowserSync then watch
  * files for changes
  */
-gulp.task('default', ['browser-sync', 'watch', 'component-pug', 'img', 'component-sass']);
+gulp.task('default', ['browser-sync', 'watch', 'component-pug', 'img', 'component-sass', 'js']);
